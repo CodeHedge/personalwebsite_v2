@@ -1,0 +1,72 @@
+:root {
+  /* === HEDGEOS THEME - BRUTALIST HACKER (RED/PINK) === */
+
+  /* Primary Background Colors */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1e1e1e;
+  --bg-hover: #2a2a2a;
+  --bg-active: #333333;
+
+  /* Accent Colors - Red/Pink */
+  --accent-primary: #ff4d6d;
+  --accent-secondary: #ff6b6b;
+  --accent-tertiary: #ff8585;
+  --accent-glow: rgba(255, 77, 109, 0.4);
+  --accent-gradient: linear-gradient(135deg, #ff4d6d, #ff8585);
+
+  /* Text Colors */
+  --text-primary: #e0e0e0;
+  --text-secondary: #888888;
+  --text-tertiary: #555555;
+  --text-accent: var(--accent-primary);
+
+  /* Border Colors */
+  --border-primary: #2a2a2a;
+  --border-secondary: #3a3a3a;
+  --border-accent: var(--accent-primary);
+
+  /* Semantic Colors */
+  --folder-color: #ff6b6b;
+  --file-color: #e0e0e0;
+  --executable-color: #ff4d6d;
+  --link-color: #ff8585;
+  --hidden-color: #666666;
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Layout */
+  --sidebar-width: 200px;
+  --header-height: 48px;
+  --terminal-height: 140px;
+
+  /* Effects */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.9);
+  --shadow-glow: 0 0 20px var(--accent-glow);
+
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-sidebar: 10;
+  --z-header: 20;
+  --z-window: 100;
+  --z-window-active: 150;
+  --z-terminal: 50;
+  --z-cursor: 9999;
+}

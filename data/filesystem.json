@@ -1,0 +1,221 @@
+{
+  "name": "root",
+  "type": "folder",
+  "path": "/",
+  "children": [
+    {
+      "name": "home",
+      "type": "folder",
+      "path": "/home",
+      "children": [
+        {
+          "name": "hedge",
+          "type": "folder",
+          "path": "/home/hedge",
+          "children": [
+            {
+              "name": "About_Me.md",
+              "type": "file",
+              "path": "/home/hedge/About_Me.md",
+              "fileType": "markdown",
+              "icon": "file-text",
+              "content": "# About Hedge\n\n**he/him**\n\nHello! I'm Hedge, and I like to make things!\n\n## What I Do\n\n- 3D Printing & Design\n- Software Development\n- Creative Projects\n- Gaming\n\n## Contact\n\n- **Email**: hedge@edgeofhedge.com\n- **GitHub**: [CodeHedge](https://github.com/CodeHedge)\n- **MakerWorld**: [@hedge](https://makerworld.com/en/@hedge)\n\n## About This Site\n\nWelcome to HedgeOS - a Linux-style file browser experience. Navigate through folders, open files, and explore!\n\n> Press `Ctrl+H` to reveal hidden files."
+            },
+            {
+              "name": "Applications",
+              "type": "folder",
+              "path": "/home/hedge/Applications",
+              "icon": "app-window",
+              "children": [
+                {
+                  "name": "countdown.app",
+                  "type": "file",
+                  "path": "/home/hedge/Applications/countdown.app",
+                  "fileType": "app",
+                  "icon": "clock",
+                  "appType": "countdown",
+                  "config": {
+                    "targetDate": "August 8, 2026 00:00:00 GMT-0800",
+                    "title": "Birthday Countdown",
+                    "message": "Happy Birthday Hedge!"
+                  }
+                },
+                {
+                  "name": "music_player.app",
+                  "type": "file",
+                  "path": "/home/hedge/Applications/music_player.app",
+                  "fileType": "app",
+                  "icon": "music",
+                  "appType": "audio",
+                  "config": {
+                    "src": "assets/audio/Nice2KnowU.mp3",
+                    "title": "Background Music"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "3D_Prints",
+              "type": "folder",
+              "path": "/home/hedge/3D_Prints",
+              "icon": "box",
+              "children": [
+                {
+                  "name": "MakerWorld.link",
+                  "type": "file",
+                  "path": "/home/hedge/3D_Prints/MakerWorld.link",
+                  "fileType": "link",
+                  "icon": "external-link",
+                  "external": true,
+                  "url": "https://makerworld.com/en/@hedge",
+                  "description": "Check out my 3D print designs on MakerWorld"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "/home/hedge/3D_Prints/README.md",
+                  "fileType": "markdown",
+                  "icon": "file-text",
+                  "content": "# 3D Prints\n\nI design and share 3D printable models on MakerWorld.\n\n## Featured Designs\n\nVisit my [MakerWorld profile](https://makerworld.com/en/@hedge) to see all my designs!\n\n## Equipment\n\n- Various FDM printers\n- CAD software for design\n- Always experimenting with new materials"
+                }
+              ]
+            },
+            {
+              "name": "Socials",
+              "type": "folder",
+              "path": "/home/hedge/Socials",
+              "icon": "users",
+              "children": [
+                {
+                  "name": "GitHub.link",
+                  "type": "file",
+                  "path": "/home/hedge/Socials/GitHub.link",
+                  "fileType": "link",
+                  "icon": "github",
+                  "external": true,
+                  "url": "https://github.com/CodeHedge",
+                  "description": "My GitHub profile - code and projects"
+                },
+                {
+                  "name": "YouTube.link",
+                  "type": "file",
+                  "path": "/home/hedge/Socials/YouTube.link",
+                  "fileType": "link",
+                  "icon": "youtube",
+                  "external": true,
+                  "url": "https://www.youtube.com/channel/UCkqQnrAIUrOufcdjBTFCtUg/",
+                  "description": "My YouTube channel"
+                },
+                {
+                  "name": "Steam.link",
+                  "type": "file",
+                  "path": "/home/hedge/Socials/Steam.link",
+                  "fileType": "link",
+                  "icon": "gamepad-2",
+                  "external": true,
+                  "url": "https://steamcommunity.com/profiles/76561197979713029/",
+                  "description": "My Steam profile - let's play!"
+                },
+                {
+                  "name": "Email.link",
+                  "type": "file",
+                  "path": "/home/hedge/Socials/Email.link",
+                  "fileType": "link",
+                  "icon": "mail",
+                  "external": true,
+                  "url": "mailto:hedge@edgeofhedge.com",
+                  "description": "Send me an email"
+                }
+              ]
+            },
+            {
+              "name": "Projects",
+              "type": "folder",
+              "path": "/home/hedge/Projects",
+              "icon": "folder-code",
+              "children": [
+                {
+                  "name": "Portfolio.sh",
+                  "type": "file",
+                  "path": "/home/hedge/Projects/Portfolio.sh",
+                  "fileType": "shell",
+                  "icon": "terminal",
+                  "content": "#!/bin/bash\n# Portfolio Script - Hedge's Projects\n# Run with: ./Portfolio.sh\n\necho \"Loading portfolio...\"\necho \"\"\n\n# Define projects\nprojects=(\n    \"HedgeOS - This website you're viewing right now!\"\n    \"3D Printing - Custom designs on MakerWorld\"\n    \"Open Source - Contributions on GitHub\"\n    \"Gaming - Check out my Steam profile\"\n)\n\necho \"=== HEDGE'S PROJECTS ===\"\necho \"\"\n\nfor project in \"${projects[@]}\"; do\n    echo \">> $project\"\n    sleep 0.5\ndone\n\necho \"\"\necho \"Portfolio loaded successfully!\"\necho \"Visit GitHub for more: github.com/CodeHedge\""
+                },
+                {
+                  "name": "HedgeOS.md",
+                  "type": "file",
+                  "path": "/home/hedge/Projects/HedgeOS.md",
+                  "fileType": "markdown",
+                  "icon": "file-text",
+                  "content": "# HedgeOS\n\nA Linux-style file browser personal website.\n\n## Features\n\n- File browser navigation\n- Draggable windows\n- Terminal logging\n- Hidden files (Ctrl+H)\n- Custom cursor\n- Background music\n\n## Tech Stack\n\n- Vanilla HTML5, CSS3, JavaScript\n- Lucide Icons\n- JetBrains Mono font\n\n## Credits\n\nBuilt with love by Hedge."
+                }
+              ]
+            },
+            {
+              "name": "Media",
+              "type": "folder",
+              "path": "/home/hedge/Media",
+              "icon": "film",
+              "children": [
+                {
+                  "name": "YouTube_Channel.link",
+                  "type": "file",
+                  "path": "/home/hedge/Media/YouTube_Channel.link",
+                  "fileType": "link",
+                  "icon": "youtube",
+                  "external": true,
+                  "url": "https://www.youtube.com/channel/UCkqQnrAIUrOufcdjBTFCtUg/",
+                  "description": "Watch my latest videos on YouTube"
+                }
+              ]
+            },
+            {
+              "name": "Archives",
+              "type": "folder",
+              "path": "/home/hedge/Archives",
+              "icon": "archive",
+              "children": [
+                {
+                  "name": "old_site.tar.gz",
+                  "type": "file",
+                  "path": "/home/hedge/Archives/old_site.tar.gz",
+                  "fileType": "archive",
+                  "icon": "file-archive",
+                  "description": "Previous website design (archived)"
+                }
+              ]
+            },
+            {
+              "name": ".secret",
+              "type": "folder",
+              "path": "/home/hedge/.secret",
+              "icon": "lock",
+              "hidden": true,
+              "children": [
+                {
+                  "name": "easter_egg.txt",
+                  "type": "file",
+                  "path": "/home/hedge/.secret/easter_egg.txt",
+                  "fileType": "text",
+                  "icon": "file-text",
+                  "hidden": true,
+                  "content": "You found the secret!\n\nNice hacking skills. :)\n\nSince you're here, here's a fun fact:\nThis entire website is built with vanilla HTML, CSS, and JavaScript.\nNo frameworks, no build tools - just pure code.\n\nThanks for exploring HedgeOS!"
+                },
+                {
+                  "name": ".bashrc",
+                  "type": "file",
+                  "path": "/home/hedge/.secret/.bashrc",
+                  "fileType": "shell",
+                  "icon": "terminal",
+                  "hidden": true,
+                  "content": "# ~/.bashrc\n# Hedge's bash configuration\n\n# Aliases\nalias ll='ls -la'\nalias gs='git status'\nalias gp='git push'\n\n# Custom prompt\nexport PS1='\\[\\033[01;32m\\]hedge@hedgeos\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ '\n\n# Welcome message\necho \"Welcome back, Hedge!\"\necho \"Today is $(date '+%A, %B %d, %Y')\""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

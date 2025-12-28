@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+  ls -la
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HedgeOS ~ /home/hedge</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Hedge's personal website - A Linux-style file browser experience">
+  <meta property="og:title" content="HedgeOS">
+  <meta property="og:description" content="Hedge's personal website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://github.com/CodeHedge.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="custom-cursor">
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- HedgeOS Container -->
+  <div class="hedgeos">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <i data-lucide="terminal"></i>
+          <span>HedgeOS</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Bookmarks</div>
+        <nav class="sidebar-nav">
+          <div class="sidebar-item active" data-path="/home/hedge">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+          </div>
+          <div class="sidebar-item" data-path="/home/hedge/Projects">
+            <i data-lucide="folder-code"></i>
+            <span>Projects</span>
+          </div>
+          <div class="sidebar-item" data-path="/home/hedge/Socials">
+            <i data-lucide="users"></i>
+            <span>Links</span>
+          </div>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <img src="https://github.com/CodeHedge.png" alt="Hedge" class="sidebar-avatar-img">
+          <div class="sidebar-user-info">
+            <span class="sidebar-username">hedge</span>
+            <span class="sidebar-status">he/him</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Header / Breadcrumbs -->
+    <header class="header">
+      <button class="menu-toggle" id="menuToggle">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="breadcrumbs" id="breadcrumbs">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <div class="header-actions">
+        <button class="header-btn" id="audioToggle" title="Toggle Music">
+          <i data-lucide="volume-x"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main File Grid -->
+    <main class="main">
+      <div class="file-grid" id="fileGrid">
+        <!-- Populated by JavaScript -->
+      </div>
+    </main>
+
+    <!-- Terminal -->
+    <footer class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-title">
+          <i data-lucide="terminal"></i>
+          <span>Terminal</span>
+        </div>
+        <div class="terminal-controls">
+          <button class="terminal-btn" id="clearTerminal" title="Clear">
+            <i data-lucide="trash-2"></i>
+          </button>
+        </div>
+      </div>
+      <div class="terminal-output" id="terminalOutput">
+        <!-- Populated by JavaScript -->
+      </div>
+      <div class="terminal-input-line">
+        <span class="terminal-input-prompt">hedge@hedgeos:~$</span>
+        <span class="terminal-cursor"></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Windows Container -->
+  <div class="windows-container" id="windowsContainer">
+    <!-- Windows populated by JavaScript -->
+  </div>
+
+  <!-- Mobile Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Background Audio -->
+  <audio id="bgAudio" loop>
+    <source src="assets/audio/Nice2KnowU.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
