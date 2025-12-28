@@ -163,6 +163,22 @@
               "icon": "film",
               "children": [
                 {
+                  "name": "music_player.app",
+                  "type": "file",
+                  "path": "/home/hedge/Media/music_player.app",
+                  "fileType": "app",
+                  "icon": "music",
+                  "appType": "audio",
+                  "config": {
+                    "title": "Music Player",
+                    "assetsPath": "assets/",
+                    "tracks": [
+                      { "name": "Nice2KnowU", "file": "Nice2KnowU.mp3" },
+                      { "name": "Let You Know", "file": "Let You Know.mp3" }
+                    ]
+                  }
+                },
+                {
                   "name": "YouTube_Channel.link",
                   "type": "file",
                   "path": "/home/hedge/Media/YouTube_Channel.link",

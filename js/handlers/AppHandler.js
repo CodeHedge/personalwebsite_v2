@@ -109,12 +109,15 @@ export class AppHandler {
     const assetsPath = config.assetsPath || 'assets/';
     const hasMultipleTracks = tracks.length > 1;
 
-    // Set playlist in audio manager
+    // Set playlist in audio manager (won't reset if same playlist)
     if (this.audioManager) {
       this.audioManager.setPlaylist(tracks, assetsPath);
     }
 
-    const currentTrack = tracks[0];
+    // Get current track from audio manager (preserves position on reopen)
+    const currentTrackInfo = this.audioManager?.getCurrentTrack();
+    const currentTrackIndex = currentTrackInfo?.index ?? 0;
+    const currentTrack = tracks[currentTrackIndex] || tracks[0];
     const albumArt = assetsPath + currentTrack.name + '.png';
 
     container.innerHTML = `
@@ -127,7 +130,7 @@ export class AppHandler {
         </div>
         <div class="audio-info">
           <div class="audio-track-name">${currentTrack.name}</div>
-          <div class="audio-track-count">${hasMultipleTracks ? `Track 1 of ${tracks.length}` : 'Background Music'}</div>
+          <div class="audio-track-count">${hasMultipleTracks ? `Track ${currentTrackIndex + 1} of ${tracks.length}` : 'Background Music'}</div>
         </div>
         <div class="audio-controls">
           <button class="audio-nav-btn audio-prev-btn" ${hasMultipleTracks ? '' : 'style="visibility: hidden;"'}>

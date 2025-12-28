@@ -55,6 +55,15 @@ export class AudioManager {
    * Set the playlist
    */
   setPlaylist(tracks, assetsPath = 'assets/') {
+    // Check if this is the same playlist already loaded (don't reset if so)
+    const isSamePlaylist = this.tracks.length === tracks.length &&
+      this.tracks.every((t, i) => t.file === tracks[i].file);
+
+    if (isSamePlaylist && this.tracks.length > 0) {
+      // Playlist already set, don't reset - keep current position
+      return;
+    }
+
     this.tracks = tracks;
     this.assetsPath = assetsPath;
     this.currentTrackIndex = 0;
