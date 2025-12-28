@@ -62,8 +62,8 @@ class HedgeOS {
       this.fileGrid = new FileGrid('#fileGrid', this.onFileClick.bind(this));
       this.windowManager = new WindowManager('#windowsContainer', this.onWindowClose.bind(this));
 
-      // Initialize audio manager
-      this.audioManager = new AudioManager('#bgAudio', '#audioToggle');
+      // Initialize audio manager (null for button - we'll handle it ourselves)
+      this.audioManager = new AudioManager('#bgAudio', null);
 
       // Initialize handlers
       this.handlers = {
@@ -126,6 +126,22 @@ class HedgeOS {
     const clearTerminalBtn = document.getElementById('clearTerminal');
     if (clearTerminalBtn) {
       clearTerminalBtn.addEventListener('click', () => this.terminal.clear());
+    }
+
+    // Header audio button - opens music player window
+    const audioToggle = document.getElementById('audioToggle');
+    if (audioToggle) {
+      audioToggle.addEventListener('click', () => this.openMusicPlayer());
+
+      // Update icon based on audio state
+      this.audioManager.onStateChange((isPlaying) => {
+        // Replace the icon element entirely (Lucide converts <i> to <svg>)
+        audioToggle.innerHTML = `<i data-lucide="${isPlaying ? 'volume-2' : 'volume-x'}"></i>`;
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+        audioToggle.classList.toggle('active', isPlaying);
+      });
     }
 
     // Mobile menu toggle
@@ -251,6 +267,20 @@ class HedgeOS {
     // Refresh icons
     if (window.lucide) {
       window.lucide.createIcons();
+    }
+  }
+
+  /**
+   * Open the music player app
+   */
+  openMusicPlayer() {
+    const musicPlayerPath = '/home/hedge/Applications/music_player.app';
+    const musicPlayerFile = this.filesystem.getItem(musicPlayerPath);
+
+    if (musicPlayerFile) {
+      this.openFile(musicPlayerFile);
+    } else {
+      this.terminal.error('Music player not found');
     }
   }
 

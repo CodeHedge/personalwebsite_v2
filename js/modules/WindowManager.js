@@ -15,42 +15,52 @@ export class WindowManager {
    * Open a new window for a file
    */
   open(file, handler) {
-    // Check if window already exists
-    if (this.windows.has(file.path)) {
+    try {
+      // Check if window already exists
+      if (this.windows.has(file.path)) {
+        this.bringToFront(file.path);
+        return this.windows.get(file.path);
+      }
+
+      const windowId = this.generateId();
+      const windowEl = this.createWindow(windowId, file);
+
+      // Render content using handler
+      const content = windowEl.querySelector('.window-content');
+      if (handler) {
+        handler.render(content, file);
+      }
+
+      if (!this.container) {
+        console.error('WindowManager: container not found');
+        return null;
+      }
+
+      this.container.appendChild(windowEl);
+      this.windows.set(file.path, { id: windowId, element: windowEl, file });
+
+      // Position window (pass file for custom sizing)
+      this.positionWindow(windowEl, file);
+
+      // Make draggable
+      this.makeDraggable(windowEl);
+
+      // Make resizable
+      this.makeResizable(windowEl);
+
+      // Bring to front
       this.bringToFront(file.path);
-      return this.windows.get(file.path);
+
+      // Refresh icons
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      return { id: windowId, element: windowEl };
+    } catch (error) {
+      console.error('WindowManager.open error:', error);
+      return null;
     }
-
-    const windowId = this.generateId();
-    const windowEl = this.createWindow(windowId, file);
-
-    // Render content using handler
-    const content = windowEl.querySelector('.window-content');
-    if (handler) {
-      handler.render(content, file);
-    }
-
-    this.container.appendChild(windowEl);
-    this.windows.set(file.path, { id: windowId, element: windowEl, file });
-
-    // Position window
-    this.positionWindow(windowEl);
-
-    // Make draggable
-    this.makeDraggable(windowEl);
-
-    // Make resizable
-    this.makeResizable(windowEl);
-
-    // Bring to front
-    this.bringToFront(file.path);
-
-    // Refresh icons
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-
-    return { id: windowId, element: windowEl };
   }
 
   /**
@@ -96,7 +106,7 @@ export class WindowManager {
   /**
    * Position window with cascade effect
    */
-  positionWindow(windowEl) {
+  positionWindow(windowEl, file = null) {
     const baseX = 100;
     const baseY = 80;
     const offset = 30;
@@ -104,10 +114,19 @@ export class WindowManager {
     const x = baseX + (this.positionOffset * offset);
     const y = baseY + (this.positionOffset * offset);
 
+    // Custom sizes for specific app types
+    let width = 500;
+    let height = 400;
+
+    if (file && file.appType === 'audio') {
+      width = 380;
+      height = 520;
+    }
+
     windowEl.style.left = `${x}px`;
     windowEl.style.top = `${y}px`;
-    windowEl.style.width = '500px';
-    windowEl.style.height = '400px';
+    windowEl.style.width = `${width}px`;
+    windowEl.style.height = `${height}px`;
 
     this.positionOffset = (this.positionOffset + 1) % 5;
   }

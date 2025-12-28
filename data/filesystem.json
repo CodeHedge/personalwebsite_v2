@@ -48,8 +48,12 @@
                   "icon": "music",
                   "appType": "audio",
                   "config": {
-                    "src": "assets/audio/Nice2KnowU.mp3",
-                    "title": "Background Music"
+                    "title": "Music Player",
+                    "assetsPath": "assets/",
+                    "tracks": [
+                      { "name": "Nice2KnowU", "file": "Nice2KnowU.mp3" },
+                      { "name": "Let You Know", "file": "Let You Know.mp3" }
+                    ]
                   }
                 }
               ]
@@ -209,7 +213,7 @@
                   "fileType": "shell",
                   "icon": "terminal",
                   "hidden": true,
-                  "content": "# ~/.bashrc\n# Hedge's bash configuration\n\n# Aliases\nalias ll='ls -la'\nalias gs='git status'\nalias gp='git push'\n\n# Custom prompt\nexport PS1='\\[\\033[01;32m\\]hedge@hedgeos\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ '\n\n# Welcome message\necho \"Welcome back, Hedge!\"\necho \"Today is $(date '+%A, %B %d, %Y')\""
+                  "content": "# ~/.bashrc\n# Hedge's bash configuration for HedgeOS\n\n# If not running interactively, don't do anything\ncase $- in\n    *i*) ;;\n      *) return;;\nesac\n\n# History settings\nHISTCONTROL=ignoreboth\nHISTSIZE=1000\nHISTFILESIZE=2000\n\n# Aliases\nalias ll='ls -la'\nalias la='ls -A'\nalias l='ls -CF'\nalias gs='git status'\nalias gp='git push'\nalias cls='clear'\n\n# Custom prompt with timestamp\n# Format: [HH:MM:SS] hedge@hedgeos:~$\nexport PS1='[\\t] \\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ '\n\n# Startup messages\necho \"HedgeOS v1.0 initialized\"\necho \"Loading filesystem...\"\necho \"System ready\"\necho \"Welcome to HedgeOS!\""
                 }
               ]
             }
