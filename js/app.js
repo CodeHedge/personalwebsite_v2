@@ -11,6 +11,7 @@ import { WindowManager } from './modules/WindowManager.js';
 import { Terminal } from './modules/Terminal.js';
 import { Cursor } from './modules/Cursor.js';
 import { AudioManager } from './modules/AudioManager.js';
+import { MessageBoard } from './modules/MessageBoard.js';
 
 // Import handlers
 import { MarkdownHandler } from './handlers/MarkdownHandler.js';
@@ -31,6 +32,7 @@ class HedgeOS {
     this.windowManager = null;
     this.terminal = null;
     this.audioManager = null;
+    this.messageBoard = null;
     this.showHidden = false;
     this.currentPath = '/home/hedge';
 
@@ -77,6 +79,9 @@ class HedgeOS {
 
       // Initialize custom cursor
       new Cursor();
+
+      // Initialize message board (guestbook)
+      this.messageBoard = new MessageBoard('#messagePanel', this.terminal);
 
       // Setup event listeners
       this.setupEventListeners();

@@ -1,14 +1,19 @@
 .hedgeos {
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-columns: var(--sidebar-width) 1fr var(--message-panel-width);
   grid-template-rows: var(--header-height) 1fr var(--terminal-height);
   grid-template-areas:
-    "sidebar header"
-    "sidebar main"
-    "terminal terminal";
+    "sidebar header messagepanel"
+    "sidebar main messagepanel"
+    "terminal terminal terminal";
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+/* Message panel collapsed state */
+.hedgeos.message-panel-collapsed {
+  grid-template-columns: var(--sidebar-width) 1fr var(--message-panel-collapsed);
 }
 
 .header {
@@ -72,6 +77,10 @@
       "header"
       "main"
       "terminal";
+  }
+
+  .hedgeos.message-panel-collapsed {
+    grid-template-columns: 1fr;
   }
 
   .sidebar {

@@ -24,6 +24,10 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -117,6 +121,26 @@
         <span class="terminal-cursor"></span>
       </div>
     </footer>
+
+    <!-- Message Panel (Guestbook) -->
+    <aside class="message-panel" id="messagePanel">
+      <button class="message-panel-toggle" id="messagePanelToggle" title="Toggle Guestbook">
+        <i data-lucide="message-square"></i>
+      </button>
+      <div class="message-panel-content">
+        <div class="message-panel-header">
+          <h3>Guestbook</h3>
+        </div>
+        <div class="messages-list" id="messagesList">
+          <div class="messages-loading">Loading messages...</div>
+        </div>
+        <form class="message-form" id="messageForm">
+          <input type="text" name="name" placeholder="Your name" required maxlength="50">
+          <textarea name="message" placeholder="Leave a message..." required maxlength="500"></textarea>
+          <button type="submit">Post</button>
+        </form>
+      </div>
+    </aside>
   </div>
 
   <!-- Windows Container -->
@@ -126,6 +150,9 @@
 
   <!-- Mobile Sidebar Overlay -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Mobile Message Panel Overlay -->
+  <div class="message-panel-overlay" id="messagePanelOverlay"></div>
 
   <!-- Background Audio -->
   <audio id="bgAudio" loop>

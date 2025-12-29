@@ -52,6 +52,8 @@
   --sidebar-width: 200px;
   --header-height: 48px;
   --terminal-height: 140px;
+  --message-panel-width: 280px;
+  --message-panel-collapsed: 48px;
 
   /* Effects */
   --transition-fast: 150ms ease;
