@@ -106,6 +106,7 @@ export class MessageBoard {
   collapse() {
     this.isOpen = false;
     this.panel?.classList.add('collapsed');
+    this.panel?.classList.remove('open');
     this.hedgeos?.classList.add('message-panel-collapsed');
     this.overlay?.classList.remove('active');
 
