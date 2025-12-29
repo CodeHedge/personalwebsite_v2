@@ -76,12 +76,12 @@ export class AudioManager {
   /**
    * Load a track by index
    */
-  loadTrack(index, autoPlay = true) {
+  loadTrack(index, autoPlay = true, forcePlay = false) {
     if (index < 0 || index >= this.tracks.length) return;
 
     this.currentTrackIndex = index;
     const track = this.tracks[index];
-    const wasPlaying = this.playing;
+    const wasPlaying = this.playing || forcePlay;
 
     this.audio.src = this.assetsPath + track.file;
     this.audio.load();
@@ -109,10 +109,10 @@ export class AudioManager {
   /**
    * Play next track
    */
-  next() {
+  next(forcePlay = false) {
     if (this.tracks.length === 0) return;
     const nextIndex = (this.currentTrackIndex + 1) % this.tracks.length;
-    this.loadTrack(nextIndex, true);
+    this.loadTrack(nextIndex, true, forcePlay);
   }
 
   /**
