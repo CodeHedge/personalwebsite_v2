@@ -220,7 +220,7 @@
                   "fileType": "text",
                   "icon": "file-text",
                   "hidden": true,
-                  "content": "You found the secret!\n\nNice hacking skills. :)\n\nSince you're here, here's a fun fact:\nThis entire website is built with vanilla HTML, CSS, and JavaScript.\nNo frameworks, no build tools - just pure code.\n\nThanks for exploring HedgeOS!"
+                  "content": "You found the secret!\n\nNice!. :)\n\nThanks for exploring HedgeOS! :D"
                 },
                 {
                   "name": ".bashrc",
