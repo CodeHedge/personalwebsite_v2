@@ -19,7 +19,7 @@
               "path": "/home/hedge/About_Me.md",
               "fileType": "markdown",
               "icon": "file-text",
-              "content": "# About Hedge\n\n**he/him**\n\nHello! I'm Hedge, and I like to make things!\n\n## What I Do\n\n- 3D Printing & Design\n- Software Development\n- Creative Projects\n- Gaming\n\n## Contact\n\n- **Email**: hedge@edgeofhedge.com\n- **GitHub**: [CodeHedge](https://github.com/CodeHedge)\n- **MakerWorld**: [@hedge](https://makerworld.com/en/@hedge)\n\n## About This Site\n\nWelcome to HedgeOS - a Linux-style file browser experience. Navigate through folders, open files, and explore!\n\n> Press `Ctrl+H` to reveal hidden files."
+              "content": "# About Hedge\n\n**he/him**\n\nHello! I'm Hedge, and I like to make things!\n\n## What I Do\n\n- 3D Printing & Design\n- Software Development\n- Creative Projects\n- Gaming\n\n## Contact\n\n- **Email**: hedge@edgeofhedge.com\n- **GitHub**: [CodeHedge](https://github.com/CodeHedge)\n- **MakerWorld**: [@hedge](https://makerworld.com/en/@hedge)\n- **Patreon**: [TheRealHedge](https://www.patreon.com/cw/TheRealHedge)\n\n## About This Site\n\nWelcome to HedgeOS - a Linux-style file browser experience. Navigate through folders, open files, and explore!\n\n> Press `Ctrl+H` to reveal hidden files."
             },
             {
               "name": "Applications",
@@ -51,8 +51,9 @@
                     "title": "Music Player",
                     "assetsPath": "assets/",
                     "tracks": [
-                      { "name": "Nice2KnowU", "file": "Nice2KnowU.mp3" },
-                      { "name": "Let You Know", "file": "Let You Know.mp3" }
+                      { "name": "Let You Know", "file": "Let You Know.mp3" },
+                      { "name": "Nice2KnowU", "file": "Nice2KnowU.mp3" }
+                      
                     ]
                   }
                 }
@@ -129,6 +130,16 @@
                   "external": true,
                   "url": "mailto:hedge@edgeofhedge.com",
                   "description": "Send me an email"
+                },
+                {
+                  "name": "Patreon.link",
+                  "type": "file",
+                  "path": "/home/hedge/Socials/Patreon.link",
+                  "fileType": "link",
+                  "icon": "heart",
+                  "external": true,
+                  "url": "https://www.patreon.com/cw/TheRealHedge",
+                  "description": "Support me on Patreon"
                 }
               ]
             },
