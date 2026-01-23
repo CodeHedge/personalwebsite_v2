@@ -24,6 +24,7 @@ export class AudioManager {
     // Start muted
     this.audio.volume = 0.3;
     this.audio.muted = true;
+    this.audio.loop = false; // Disable native looping to allow playlist support
 
     // Button click handler
     if (this.button) {
